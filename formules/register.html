@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
+  </head>
+  <body>
+    <div class="flex-menu-container">
+      <div><a href="../formules.html"> accueuil </a></div>
+      <div><a href="login.html"> login </a></div>
+    </div>
+    <form
+      name="mon_form"
+      id="mon_form"
+      onsubmit="return validation_formulaire()"
+      action="POST"
+    >
+      <fieldset>
+        <legend>Identité</legend>
+        <div>
+          <label for="prenom">Prénom</label>
+          <input class="input-left" type="text" id="prenom" />
+        </div>
+        <div>
+          <label for="nom">Nom</label>
+          <input class="input-left" type="text" id="nom" />
+        </div>
+        <div>
+          <label for="titre">Titre</label>
+          <select class="input-left" name="titre" id="titre">
+            <option value="M">Monsieur</option>
+            <option value="Mme">Madame</option>
+            <option value="Melle">Mademoiselle</option>
+            <option value="" selected>Choisir dans cette liste</option>
+          </select>
+        </div>
+        <div>
+          <label for="datedenaissance">Date de naissance</label>
+          <input class="input-left" type="date" id="datedenaissance" />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Lieu de résidence</legend>
+        <div>
+          <label for="voie">Voie</label>
+          <input class="input-left" type="text" id="voie" />
+        </div>
+        <div>
+          <label for="cp">CodePostal</label>
+          <input class="input-left" type="text" id="cp" />
+        </div>
+        <div>
+          <label for="ville">Ville</label>
+          <input class="input-left" type="text" id="ville" />
+        </div>
+        <div>
+          <label for="telephone">Téléphone</label>
+          <input class="input-left" type="tel" id="telephone" />
+        </div>
+        <div>
+          <input type="radio" id="fixe" name="radio_telephone" value="Fixe" />
+          <label for="fixe">Fixe</label>
+          <input
+            type="radio"
+            id="mobile"
+            name="radio_telephone"
+            value="Mobile"
+          />
+          <label for="mobile">Mobile</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Communication</legend>
+        <div>
+          <label for="email">Email</label>
+          <input class="input-left" type="text" id="email" />
+        </div>
+        <div>
+          <label for="siteweb">Site Web</label>
+          <input class="input-left" type="text" id="siteweb" />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Autres</legend>
+        <div>
+          <label for="commentaires">Commentaires</label>
+          <textarea class="input-left" id="commentaires"> </textarea>
+        </div>
+        <div>
+          <label for="centresinterets"
+            >Centres d'interets (touche ctrl pour plusieurs choix)
+          </label>
+          <br />
+          <select
+            class="input-left"
+            name="centresinterets"
+            id="centresinterets"
+            multiple
+          >
+            <option value="lecture">Lecture</option>
+            <option value="sport">Sport</option>
+            <option value="cinema">Cinema</option>
+            <option value="gaming">Online Gaming</option>
+          </select>
+        </div>
+      </fieldset>
+      <input type="submit" value="Confirmer" />
+    </form>
+    <script>
+      /*
+       * https://www.w3schools.com/js/js_validation.asp
+       */
+      function validation_formulaire() {
+        let mon_form = document.forms["mon_form"];
+        console.log(
+          "validation_formulaire() " + mon_form.centresinterets.value
+        );
+        alert("validation_formulaire() " + mon_form.centresinterets.value);
+        return false;
+      }
+    </script>
+  </body>
+</html>

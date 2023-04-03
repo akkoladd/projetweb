@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
+  </head>
+  <body>
+    <div class="flex-menu-container">
+      <div><a href="../formules.html"> accueuil </a></div>
+      <div><a href="register.html"> register </a></div>
+    </div>
+    <form
+      name="mon_form"
+      id="mon_form"
+      onsubmit="return connexion()"
+      action="POST"
+    >
+      <fieldset>
+        <legend>Connexion au service</legend>
+        <div>
+          <label for="ident">Identifiant</label>
+          <input class="input-left" type="text" id="ident" />
+        </div>
+        <div>
+          <label for="motdepasse">Mot de passe</label>
+          <input class="input-left" type="text" id="motdepasse" />
+        </div>
+      </fieldset>
+
+      <input type="submit" value="Connexion" />
+    </form>
+    <script>
+      /*
+       * https://www.w3schools.com/js/js_validation.asp
+       */
+      function connexion() {
+        let mon_form = document.forms["mon_form"];
+        let str =
+          "login " +
+          mon_form.ident.value +
+          "password" +
+          mon_form.motdepasse.value;
+        console.log("connexion avec données" + str);
+        alert("connexion: " + str);
+        return false;
+      }
+    </script>
+  </body>
+</html>
